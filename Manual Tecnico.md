@@ -12,6 +12,34 @@ Este proyecto consiste en implementar **tres máquinas virtuales (VMs)** con API
 
 ---
 
+# Instalación de dependencias para creación de Máquinas Virtuales
+
+Para poder crear y administrar máquinas virtuales en Linux, se instalaron las siguientes herramientas y dependencias.
+
+---
+
+## 1. Actualizar el sistema
+Antes de instalar cualquier paquete, es recomendable actualizar los repositorios y el sistema:
+
+### En **Archlinux**
+```bash
+sudo pacman -Syu 
+```
+
+## 2. Instalar Virtualización (KVM + Libvirt)
+Necesitamos soporte para virtualización y gestión de máquinas virtuales:
+```bash
+sudo pacman -S qemu-full virt-manager virt-viewer dnsmasq vde2 bridge-utils openbsd-netcat
+```
+
+## 3. Habilitar y arrancar libvirt
+Activamos el servicio de libvirtd para poder usar virsh y virt-manager:
+```bash
+sudo systemctl enable libvirtd
+sudo systemctl start libvirtd
+systemctl status libvirtd
+```
+
 ## 🔹 Instalaciones iniciales en VM1 y VM2
 
 ###  En todas las VMs la instalacion de dependencias
