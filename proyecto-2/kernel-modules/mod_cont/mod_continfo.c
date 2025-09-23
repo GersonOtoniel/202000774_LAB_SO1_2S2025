@@ -18,11 +18,11 @@
 #include <linux/timekeeping.h>
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Tu Nombre");
+MODULE_AUTHOR("Gerson");
 MODULE_DESCRIPTION("Modulo para leer informacion de memoria y CPU en JSON");
 MODULE_VERSION("1.0");
 
-#define PROC_NAME "sysinfo"
+#define PROC_NAME "continfo_so1_202000774"
 #define MAX_CMDLINE_LENGTH 256
 #define CONTAINER_ID_LENGTH 64
 
@@ -115,11 +115,7 @@ static int sysinfo_show(struct seq_file *m, void *v) {
     // Obtenemos la información de memoria
     si_meminfo(&si);
 
-    seq_printf(m, "{\n");
-    seq_printf(m, "  \"Totalram\": %lu,\n", si.totalram << (PAGE_SHIFT - 10));
-    seq_printf(m, "  \"Freeram\": %lu,\n", si.freeram << (PAGE_SHIFT - 10));
-    seq_printf(m, "  \"Procs\": %d,\n", si.procs );
-    seq_printf(m, "  \"Processes\": [\n");
+    seq_printf(m, "{\n \"Processes\": [\n ");
 
 
 
