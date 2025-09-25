@@ -1,8 +1,8 @@
-savedcmd_mod_continfo.o := gcc -Wp,-MMD,./.mod_continfo.o.d -nostdinc -I/usr/lib/modules/6.16.7-arch1-1/build/arch/x86/include -I/usr/lib/modules/6.16.7-arch1-1/build/arch/x86/include/generated -I/usr/lib/modules/6.16.7-arch1-1/build/include -I/usr/lib/modules/6.16.7-arch1-1/build/include -I/usr/lib/modules/6.16.7-arch1-1/build/arch/x86/include/uapi -I/usr/lib/modules/6.16.7-arch1-1/build/arch/x86/include/generated/uapi -I/usr/lib/modules/6.16.7-arch1-1/build/include/uapi -I/usr/lib/modules/6.16.7-arch1-1/build/include/generated/uapi -include /usr/lib/modules/6.16.7-arch1-1/build/include/linux/compiler-version.h -include /usr/lib/modules/6.16.7-arch1-1/build/include/linux/kconfig.h -include /usr/lib/modules/6.16.7-arch1-1/build/include/linux/compiler_types.h -D__KERNEL__ -std=gnu11 -fshort-wchar -funsigned-char -fno-common -fno-PIE -fno-strict-aliasing -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -fcf-protection=branch -fno-jump-tables -m64 -falign-jumps=1 -falign-loops=1 -mno-80387 -mno-fp-ret-in-387 -mpreferred-stack-boundary=3 -mskip-rax-setup -march=x86-64 -mtune=generic -mno-red-zone -mcmodel=kernel -mstack-protector-guard-reg=gs -mstack-protector-guard-symbol=__ref_stack_chk_guard -Wno-sign-compare -fno-asynchronous-unwind-tables -mindirect-branch=thunk-extern -mindirect-branch-register -mindirect-branch-cs-prefix -mfunction-return=thunk-extern -fno-jump-tables -mharden-sls=all -fpatchable-function-entry=16,16 -fno-delete-null-pointer-checks -O2 -fno-allow-store-data-races -fstack-protector-strong -ftrivial-auto-var-init=zero -fzero-init-padding-bits=all -fno-stack-clash-protection -pg -mrecord-mcount -mfentry -DCC_USING_FENTRY -fmin-function-alignment=16 -fstrict-flex-arrays=3 -fno-strict-overflow -fno-stack-check -fconserve-stack -fno-builtin-wcslen -Wall -Wextra -Wundef -Werror=implicit-function-declaration -Werror=implicit-int -Werror=return-type -Werror=strict-prototypes -Wno-format-security -Wno-trigraphs -Wno-frame-address -Wno-address-of-packed-member -Wmissing-declarations -Wmissing-prototypes -Wframe-larger-than=2048 -Wno-main -Wno-dangling-pointer -Wvla-larger-than=1 -Wno-pointer-sign -Wcast-function-type -Wno-unterminated-string-initialization -Wno-array-bounds -Wno-stringop-overflow -Wno-alloc-size-larger-than -Wimplicit-fallthrough=5 -Werror=date-time -Werror=incompatible-pointer-types -Werror=designated-init -Wenum-conversion -Wunused -Wno-unused-but-set-variable -Wno-unused-const-variable -Wno-packed-not-aligned -Wno-format-overflow -Wno-format-truncation -Wno-stringop-truncation -Wno-override-init -Wno-missing-field-initializers -Wno-type-limits -Wno-shift-negative-value -Wno-maybe-uninitialized -Wno-sign-compare -Wno-unused-parameter -g -gdwarf-5  -DMODULE  -DKBUILD_BASENAME='"mod_continfo"' -DKBUILD_MODNAME='"mod_continfo"' -D__KBUILD_MODNAME=kmod_mod_continfo -c -o mod_continfo.o mod_continfo.c   ; /usr/lib/modules/6.16.7-arch1-1/build/tools/objtool/objtool --hacks=jump_label --hacks=noinstr --hacks=skylake --ibt --orc --retpoline --rethunk --sls --static-call --uaccess --prefix=16  --link  --module mod_continfo.o
+savedcmd_mod_sysinfo.o := gcc -Wp,-MMD,./.mod_sysinfo.o.d -nostdinc -I/usr/lib/modules/6.16.7-arch1-1/build/arch/x86/include -I/usr/lib/modules/6.16.7-arch1-1/build/arch/x86/include/generated -I/usr/lib/modules/6.16.7-arch1-1/build/include -I/usr/lib/modules/6.16.7-arch1-1/build/include -I/usr/lib/modules/6.16.7-arch1-1/build/arch/x86/include/uapi -I/usr/lib/modules/6.16.7-arch1-1/build/arch/x86/include/generated/uapi -I/usr/lib/modules/6.16.7-arch1-1/build/include/uapi -I/usr/lib/modules/6.16.7-arch1-1/build/include/generated/uapi -include /usr/lib/modules/6.16.7-arch1-1/build/include/linux/compiler-version.h -include /usr/lib/modules/6.16.7-arch1-1/build/include/linux/kconfig.h -include /usr/lib/modules/6.16.7-arch1-1/build/include/linux/compiler_types.h -D__KERNEL__ -std=gnu11 -fshort-wchar -funsigned-char -fno-common -fno-PIE -fno-strict-aliasing -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -fcf-protection=branch -fno-jump-tables -m64 -falign-jumps=1 -falign-loops=1 -mno-80387 -mno-fp-ret-in-387 -mpreferred-stack-boundary=3 -mskip-rax-setup -march=x86-64 -mtune=generic -mno-red-zone -mcmodel=kernel -mstack-protector-guard-reg=gs -mstack-protector-guard-symbol=__ref_stack_chk_guard -Wno-sign-compare -fno-asynchronous-unwind-tables -mindirect-branch=thunk-extern -mindirect-branch-register -mindirect-branch-cs-prefix -mfunction-return=thunk-extern -fno-jump-tables -mharden-sls=all -fpatchable-function-entry=16,16 -fno-delete-null-pointer-checks -O2 -fno-allow-store-data-races -fstack-protector-strong -ftrivial-auto-var-init=zero -fzero-init-padding-bits=all -fno-stack-clash-protection -pg -mrecord-mcount -mfentry -DCC_USING_FENTRY -fmin-function-alignment=16 -fstrict-flex-arrays=3 -fno-strict-overflow -fno-stack-check -fconserve-stack -fno-builtin-wcslen -Wall -Wextra -Wundef -Werror=implicit-function-declaration -Werror=implicit-int -Werror=return-type -Werror=strict-prototypes -Wno-format-security -Wno-trigraphs -Wno-frame-address -Wno-address-of-packed-member -Wmissing-declarations -Wmissing-prototypes -Wframe-larger-than=2048 -Wno-main -Wno-dangling-pointer -Wvla-larger-than=1 -Wno-pointer-sign -Wcast-function-type -Wno-unterminated-string-initialization -Wno-array-bounds -Wno-stringop-overflow -Wno-alloc-size-larger-than -Wimplicit-fallthrough=5 -Werror=date-time -Werror=incompatible-pointer-types -Werror=designated-init -Wenum-conversion -Wunused -Wno-unused-but-set-variable -Wno-unused-const-variable -Wno-packed-not-aligned -Wno-format-overflow -Wno-format-truncation -Wno-stringop-truncation -Wno-override-init -Wno-missing-field-initializers -Wno-type-limits -Wno-shift-negative-value -Wno-maybe-uninitialized -Wno-sign-compare -Wno-unused-parameter -g -gdwarf-5  -DMODULE  -DKBUILD_BASENAME='"mod_sysinfo"' -DKBUILD_MODNAME='"mod_sysinfo"' -D__KBUILD_MODNAME=kmod_mod_sysinfo -c -o mod_sysinfo.o mod_sysinfo.c   ; /usr/lib/modules/6.16.7-arch1-1/build/tools/objtool/objtool --hacks=jump_label --hacks=noinstr --hacks=skylake --ibt --orc --retpoline --rethunk --sls --static-call --uaccess --prefix=16  --link  --module mod_sysinfo.o
 
-source_mod_continfo.o := mod_continfo.c
+source_mod_sysinfo.o := mod_sysinfo.c
 
-deps_mod_continfo.o := \
+deps_mod_sysinfo.o := \
   /usr/lib/modules/6.16.7-arch1-1/build/include/linux/compiler-version.h \
     $(wildcard include/config/CC_VERSION_TEXT) \
   /usr/lib/modules/6.16.7-arch1-1/build/include/linux/kconfig.h \
@@ -1133,79 +1133,10 @@ deps_mod_continfo.o := \
     $(wildcard include/config/MEMORY_BALLOON) \
     $(wildcard include/config/BALLOON_COMPACTION) \
     $(wildcard include/config/X86) \
-  /usr/lib/modules/6.16.7-arch1-1/build/include/linux/cgroup.h \
-    $(wildcard include/config/DEBUG_CGROUP_REF) \
-    $(wildcard include/config/CGROUP_CPUACCT) \
-    $(wildcard include/config/SOCK_CGROUP_DATA) \
-    $(wildcard include/config/CGROUP_DATA) \
-    $(wildcard include/config/CGROUP_BPF) \
-  /usr/lib/modules/6.16.7-arch1-1/build/include/uapi/linux/cgroupstats.h \
-  /usr/lib/modules/6.16.7-arch1-1/build/include/uapi/linux/taskstats.h \
-  /usr/lib/modules/6.16.7-arch1-1/build/include/linux/ns_common.h \
-  /usr/lib/modules/6.16.7-arch1-1/build/include/linux/nsproxy.h \
-  /usr/lib/modules/6.16.7-arch1-1/build/include/linux/user_namespace.h \
-    $(wildcard include/config/INOTIFY_USER) \
-    $(wildcard include/config/FANOTIFY) \
-    $(wildcard include/config/BINFMT_MISC) \
-    $(wildcard include/config/PERSISTENT_KEYRINGS) \
-  /usr/lib/modules/6.16.7-arch1-1/build/include/linux/rculist_nulls.h \
-  /usr/lib/modules/6.16.7-arch1-1/build/include/linux/kernel_stat.h \
-    $(wildcard include/config/GENERIC_IRQ_STAT_SNAPSHOT) \
-  /usr/lib/modules/6.16.7-arch1-1/build/include/linux/interrupt.h \
-    $(wildcard include/config/IRQ_FORCED_THREADING) \
-    $(wildcard include/config/GENERIC_IRQ_PROBE) \
-    $(wildcard include/config/IRQ_TIMINGS) \
-  /usr/lib/modules/6.16.7-arch1-1/build/include/linux/irqreturn.h \
-  /usr/lib/modules/6.16.7-arch1-1/build/include/linux/hardirq.h \
-  /usr/lib/modules/6.16.7-arch1-1/build/include/linux/context_tracking_state.h \
-    $(wildcard include/config/CONTEXT_TRACKING_USER) \
-    $(wildcard include/config/CONTEXT_TRACKING) \
-  /usr/lib/modules/6.16.7-arch1-1/build/include/linux/ftrace_irq.h \
-    $(wildcard include/config/HWLAT_TRACER) \
-    $(wildcard include/config/OSNOISE_TRACER) \
-  /usr/lib/modules/6.16.7-arch1-1/build/include/linux/vtime.h \
-    $(wildcard include/config/VIRT_CPU_ACCOUNTING) \
-    $(wildcard include/config/IRQ_TIME_ACCOUNTING) \
-  /usr/lib/modules/6.16.7-arch1-1/build/arch/x86/include/asm/hardirq.h \
-    $(wildcard include/config/KVM_INTEL) \
-    $(wildcard include/config/KVM) \
-    $(wildcard include/config/X86_THERMAL_VECTOR) \
-    $(wildcard include/config/X86_MCE_THRESHOLD) \
-    $(wildcard include/config/X86_MCE_AMD) \
-    $(wildcard include/config/X86_HV_CALLBACK_VECTOR) \
-    $(wildcard include/config/HYPERV) \
-    $(wildcard include/config/X86_POSTED_MSI) \
-  /usr/lib/modules/6.16.7-arch1-1/build/arch/x86/include/asm/irq.h \
-  /usr/lib/modules/6.16.7-arch1-1/build/arch/x86/include/asm/irq_vectors.h \
-    $(wildcard include/config/PCI_MSI) \
-  /usr/lib/modules/6.16.7-arch1-1/build/arch/x86/include/asm/sections.h \
-  /usr/lib/modules/6.16.7-arch1-1/build/include/asm-generic/sections.h \
-    $(wildcard include/config/HAVE_FUNCTION_DESCRIPTORS) \
-  /usr/lib/modules/6.16.7-arch1-1/build/include/linux/cgroup-defs.h \
-    $(wildcard include/config/CGROUP_NET_CLASSID) \
-    $(wildcard include/config/CGROUP_NET_PRIO) \
-  /usr/lib/modules/6.16.7-arch1-1/build/include/linux/u64_stats_sync.h \
-  /usr/lib/modules/6.16.7-arch1-1/build/arch/x86/include/generated/asm/local64.h \
-  /usr/lib/modules/6.16.7-arch1-1/build/include/asm-generic/local64.h \
-  /usr/lib/modules/6.16.7-arch1-1/build/arch/x86/include/asm/local.h \
-  /usr/lib/modules/6.16.7-arch1-1/build/include/linux/bpf-cgroup-defs.h \
-    $(wildcard include/config/BPF_LSM) \
-  /usr/lib/modules/6.16.7-arch1-1/build/include/linux/psi_types.h \
-  /usr/lib/modules/6.16.7-arch1-1/build/include/linux/kthread.h \
-  /usr/lib/modules/6.16.7-arch1-1/build/include/linux/cgroup_subsys.h \
-    $(wildcard include/config/CGROUP_DEVICE) \
-    $(wildcard include/config/CGROUP_FREEZER) \
-    $(wildcard include/config/CGROUP_PERF) \
-    $(wildcard include/config/CGROUP_HUGETLB) \
-    $(wildcard include/config/CGROUP_PIDS) \
-    $(wildcard include/config/CGROUP_RDMA) \
-    $(wildcard include/config/CGROUP_MISC) \
-    $(wildcard include/config/CGROUP_DMEM) \
-    $(wildcard include/config/CGROUP_DEBUG) \
-  /usr/lib/modules/6.16.7-arch1-1/build/include/linux/cgroup_refcnt.h \
+  /usr/lib/modules/6.16.7-arch1-1/build/include/linux/sched/cputime.h \
 
-mod_continfo.o: $(deps_mod_continfo.o)
+mod_sysinfo.o: $(deps_mod_sysinfo.o)
 
-$(deps_mod_continfo.o):
+$(deps_mod_sysinfo.o):
 
-mod_continfo.o: $(wildcard /usr/lib/modules/6.16.7-arch1-1/build/tools/objtool/objtool)
+mod_sysinfo.o: $(wildcard /usr/lib/modules/6.16.7-arch1-1/build/tools/objtool/objtool)

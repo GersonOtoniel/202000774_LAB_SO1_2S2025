@@ -4,6 +4,8 @@
 #include <linux/seq_file.h>
 #include <linux/mm.h>
 #include <linux/sched/signal.h>
+#include <linux/sched/cputime.h>
+#include <linux/jiffies.h>
 
 #define PROC_NAME "sysinfo_so1_202000774"
 
@@ -18,19 +20,34 @@ static int sysinfo_show(struct seq_file *m, void *v) {
     seq_printf(m, "\n--- Procesos del sistema ---\n");
     {
         struct task_struct *task;
+        unsigned long total_jiffies = jiffies;
         for_each_process(task) {
             unsigned long vsize_mb = 0;
             long rss_mb = 0;
             if (task->mm) {
-                vsize_mb = (task->mm->total_vm << (PAGE_SHIFT - 10));
-                rss_mb = get_mm_rss(task->mm) << (PAGE_SHIFT - 10);
+                vsize_mb = (task->mm->total_vm << (PAGE_SHIFT - 10)) / 1024;  
+                rss_mb = (get_mm_rss(task->mm) << (PAGE_SHIFT - 10)) / 1024;
             }
+          
             char state = task_state_to_char(task);
-            seq_printf(m, "PID:%d Name:%s CMD:%s VSZ_MB:%lu RSS_MB:%ld State:%c\n",
-                task->pid, task->comm, task->comm, vsize_mb, rss_mb, state);
+
+            unsigned long utime = task->utime;
+            unsigned long stime = task->stime;
+        
+            unsigned long utime_sec = utime / HZ;
+            unsigned long stime_sec = stime / HZ;
+
+            unsigned long total_time = utime + stime;
+            unsigned long cpu_usage = 0;
+            if(total_jiffies > 0){
+              cpu_usage = (total_time*100) / total_jiffies;
+              cpu_usage /= num_online_cpus();
+            }
+            seq_printf(m, "PID:%d Name:%s CMD:%s VSZ_MB:%lu RSS_MB:%ld State:%c CPU_user:%lus CPU_system:%lus CPU_usage:%lu%%\n",
+                task->pid, task->comm, task->comm, vsize_mb, rss_mb, state, utime_sec, stime_sec, cpu_usage );
         }
     }
-
+    seq_printf(m, "\n");
     return 0;
 }
 
