@@ -2,7 +2,7 @@ FROM grafana/grafana:11.0.0
 
 RUN grafana-cli plugins install frser-sqlite-datasource
 
-VOLUME ["var/lib/grafana", "db"]
+VOLUME ["var/lib/grafana", "/db"]
 
 EXPOSE 3000
 

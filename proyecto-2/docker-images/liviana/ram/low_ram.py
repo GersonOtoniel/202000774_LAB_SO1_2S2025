@@ -1,14 +1,11 @@
 import time
 
-def ram_light_task():
-    print("Reservando poca RAM por 30s...")
-    data = []
-    end_time = time.time() + 30
-    while time.time() < end_time:
-        data.append("X" * 1024 * 100)  # ~100KB cada vez
-        time.sleep(0.2)
-
-if __name__ == "__main__":
-    ram_light_task()
-    print("Finalizado RAM ligero.")
+data = []
+start_time = time.time()
+while time.time() - start_time < 3600:  # 1 hora
+    # Ocupa RAM mínima
+    data.append(' ' * 1024 * 5)  # 5 KB por iteración
+    if len(data) > 20:  # máximo ~100 KB
+        data.pop(0)
+    time.sleep(0.5)
 

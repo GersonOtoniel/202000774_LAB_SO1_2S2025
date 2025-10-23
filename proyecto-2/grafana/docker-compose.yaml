@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  grafana:
+    build:
+      context: .
+      network: host 
+    container_name: grafana-sqlite
+    ports:
+      - "3000:3000"
+    user: "0"
+    volumes:
+      - ../grafana:/var/lib/grafana
+      - ./database.db:/db/database.db
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=frser-sqlite-datasource
+

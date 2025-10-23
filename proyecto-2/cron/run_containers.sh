@@ -3,11 +3,11 @@
 # ===============================
 # Configuración de límites
 # ===============================
-MAX_CPU=50      # máximo % de CPU que queremos usar
-MAX_RAM=50      # máximo % de RAM que queremos usar
+MAX_CPU=70      # máximo % de CPU que queremos usar
+MAX_RAM=70      # máximo % de RAM que queremos usar
 
 # Limites de contenedores
-PESADOS_CPU=0.5
+PESADOS_CPU=0.6
 PESADOS_RAM=256m
 LIGEROS_CPU=0.2
 LIGEROS_RAM=128m
