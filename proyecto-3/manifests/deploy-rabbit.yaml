@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: grpc-rabbitmq-writer
-        image: misti-ophthalmological-ai.ngrok-free.dev/grpc-rabbitmq-writer:v1
+        image: misti-ophthalmological-ai.ngrok-free.dev/grpc-rabbitmq-writer:v2
         ports:
         - containerPort: 50053
         env:

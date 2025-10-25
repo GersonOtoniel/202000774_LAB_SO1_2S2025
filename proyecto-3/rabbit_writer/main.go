@@ -39,7 +39,7 @@ func (s *rabbitServer) SendWeatherTweet(ctx context.Context, req *pb.WeatherTwee
 
 	q, err := ch.QueueDeclare(
 		"weathertweets",
-		false,
+		true,
 		false,
 		false,
 		false,

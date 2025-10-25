@@ -49,7 +49,7 @@ func (s *server) SendWeatherTweet(ctx context.Context, req *pb.WeatherTweetReque
 }
 
 func forwardToKafka(addr string, request *pb.WeatherTweetRequest) (*pb.WeatherTweetResponse, error) {
-	conn, err := grpc.NewClient(addr, grpc.WithTransportCredentials(insecure.NewCredentials()))
+	conn, err := grpc.Dial(addr, grpc.WithTransportCredentials(insecure.NewCredentials()))
 	if err != nil {
 		return nil, err
 	}
@@ -64,7 +64,7 @@ func forwardToKafka(addr string, request *pb.WeatherTweetRequest) (*pb.WeatherTw
 }
 
 func forwardToRabbitMQ(addr string, request *pb.WeatherTweetRequest) (*pb.WeatherTweetResponse, error) {
-	conn, err := grpc.NewClient(addr, grpc.WithTransportCredentials(insecure.NewCredentials()))
+	conn, err := grpc.Dial(addr, grpc.WithTransportCredentials(insecure.NewCredentials()))
 	if err != nil {
 		return nil, err
 	}

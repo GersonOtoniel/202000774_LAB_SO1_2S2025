@@ -1,8 +1,8 @@
 from locust import HttpUser, task, between
 import random
 
-municipios = ["mixco","guatemala","amatitlan","chinautla"]
-climas = ["sunny","cloudy","rainy","foggy"]
+#municipios = ["mixco","guatemala","amatitlan","chinautla"]
+#climas = ["sunny","cloudy","rainy","foggy"]
 
 class WeatherUser(HttpUser):
     wait_time = between(1, 3)
