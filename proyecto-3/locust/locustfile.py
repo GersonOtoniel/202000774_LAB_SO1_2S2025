@@ -10,9 +10,10 @@ class WeatherUser(HttpUser):
     @task
     def send_tweet(self):
         data = {
-            "municipality": random.choice(municipios),
+            "municipality": random.randint(1,4),
             "temperature": random.randint(15, 35),
             "humidity": random.randint(30, 90),
-            "weather": random.choice(climas)
+            "weather": random.randint(1,4)
         }
-        self.client.post("/api/tweet", json=data)
+        headers = {'Content-Type': 'application/json'}
+        self.client.post("/weathertweet", json=data, headers=headers)

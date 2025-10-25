@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: consumer-kafka
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: consumer-kafka
+  template:
+    metadata:
+      labels:
+        app: consumer-kafka
+    spec:
+      containers:
+      - name: consumer-kafka
+        image: misti-ophthalmological-ai.ngrok-free.dev/consumer-kafka:v1
+        env:
+        - name: KAFKA_BROKER
+          value: "kafka-service:9092"
+        - name: VALKEY_ADDR
+          value: "valkey-service:6379"

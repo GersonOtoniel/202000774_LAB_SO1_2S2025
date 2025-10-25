@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: consumer-rabbit
+  namespace: default
+  labels:
+    app: consumer-rabbit
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: consumer-rabbit
+  template:
+    metadata:
+      labels:
+        app: consumer-rabbit
+    spec:
+      containers:
+      - name: consumer-rabbit
+        image: misti-ophthalmological-ai.ngrok-free.dev/consumer-rabbit:v1
+        env:
+        - name: RABBITMQ_URL
+          value: "amqp://guest:guest@rabbitmq-service:5672/"
+        - name: VALKEY_ADDR
+          value: "valkey-service:6379"

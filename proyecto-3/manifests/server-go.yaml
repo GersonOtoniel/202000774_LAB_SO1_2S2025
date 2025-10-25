@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server-go-deploy
+  labels:
+    app: server-go
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: server-go
+  template:
+    metadata:
+      labels:
+        app: server-go
+    spec:
+      containers:
+      - name: server-go
+        image: misti-ophthalmological-ai.ngrok-free.dev/api-go:v4
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 50051
+        env:
+        - name: KAFKA_GRPC_ADDR
+          value: "server-go-service:50052"
+        - name: RABBITMQ_GRPC_ADDR
+          value: "server-go-rabbit:50053"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: server-go-service
+  labels:
+    app: server-go
+spec:
+  selector:
+    app: server-go
+  ports:
+  - protocol: TCP
+    port: 50051
+    targetPort: 50051

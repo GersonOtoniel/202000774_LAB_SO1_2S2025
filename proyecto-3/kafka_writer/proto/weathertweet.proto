@@ -1,0 +1,35 @@
+syntax = 'proto3';
+package weathertweet;
+
+option go_package = "./proto";
+
+message WeatherTweetRequest {
+    Municipalities municipality = 1;
+    int32 temperature = 2;
+    int32 humidity = 3;
+    Weathers weather = 4;
+}
+
+enum Municipalities {
+    municipalities_unknown = 0;
+    mixco = 1;
+    guatemala = 2;
+    amatitlan = 3;
+    chinautla = 4;
+}
+
+enum Weathers {
+    weather_unknown = 0;
+    sunny = 1;
+    cloudy = 2;
+    rainy = 3;
+    foggy = 4;
+}
+
+message WeatherTweetResponse {
+    string status = 1;
+}
+
+service WeatherTweetService {
+    rpc SendWeatherTweet (WeatherTweetRequest) returns (WeatherTweetResponse);
+}

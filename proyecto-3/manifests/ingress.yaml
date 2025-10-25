@@ -2,9 +2,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-proyecto
-  annotations:
-    kubernetes.io/ingress.class: "gce"
 spec:
+  ingressClassName: nginx
   rules:
   - http:
       paths:
@@ -15,7 +14,7 @@ spec:
             name: api-rust-service
             port:
               number: 80
-      - path: /clima
+      - path: /weathertweet
         pathType: Prefix
         backend:
           service:
